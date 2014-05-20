@@ -22,7 +22,7 @@ public class PerguntasController {
 	public void index(){
 	}
 	
-	@Path("/pergunta/{id}") //URL bonitinha
+	//@Path("/pergunta/{id}") //URL bonitinha
 	public Pergunta pergunta(int id){
 		return buscador.buscaPorId(id);
 	}

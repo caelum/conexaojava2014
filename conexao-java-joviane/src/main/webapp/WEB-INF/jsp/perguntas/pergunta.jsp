@@ -1,9 +1,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-${pergunta.titulo}
-${pergunta.conteudo}
-${pergunta.autor}
+${pergunta.titulo} <br/>
+${pergunta.conteudo} <br/>
+${pergunta.autor} <br/>
 
 <c:forEach items="${pergunta.respostas}" var="resposta">
-${resposta}
+${resposta} <br/>
 </c:forEach>

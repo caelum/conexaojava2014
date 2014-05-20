@@ -9,7 +9,7 @@ public class BuscadorDePerguntas {
 	
 	public BuscadorDePerguntas(){
 		String titulo = "Luan Santana no Conexão Java?";
-		String conteudo = "É impressão minha ou o Matheus parece com o Luan Santana? Além disso, o Mauricio parece com o Encantado do Shrek! Mais aguém acha isso?";
+		String conteudo = "É impressão minha ou o Matheus parece com o Luan Santana? Além disso, o Mauricio parece com o Encantado do Shrek! Mais alguém acha isso?";
 		String autor = "Joviane";
 
 		Pergunta pergunta1 = new Pergunta(titulo, conteudo, autor);
@@ -26,7 +26,7 @@ public class BuscadorDePerguntas {
 	}
 	
 	public Pergunta buscaPorId(int id) {		
-		return this.perguntas.get(id);
+		return this.perguntas.get(id-1);
 	}
 
 	public List<Pergunta> getPerguntas() {
