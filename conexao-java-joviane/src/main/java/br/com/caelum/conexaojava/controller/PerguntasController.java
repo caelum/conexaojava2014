@@ -12,26 +12,27 @@ import br.com.caelum.vraptor.Result;
 
 @Controller
 public class PerguntasController {
-
-	@Inject //Se der tempo
-	private Result result;
 	@Inject
 	private BuscadorDePerguntas buscador;
-	
+	@Inject
+	private Result result;
+
 	@Path("/")
-	public void index(){
+	public void lista(){
+		List<Pergunta> perguntas = this.buscador.getPerguntas();
+		result.include("perguntas", perguntas);
 	}
 	
-	//@Path("/pergunta/{id}") //URL bonitinha
-	public Pergunta pergunta(int id){
-		return buscador.buscaPorId(id);
+	public void verPergunta(int id) {
+		Pergunta pergunta = this.buscador.buscaPorId(id);
+		result.include("pergunta", pergunta);
 	}
 	
-	public List<Pergunta> lista(){
-		return buscador.getPerguntas();
+	public void mostraFormulario() {
 	}
 	
-	public void listaMaisMarota(){
-		result.include("perguntas", buscador.getPerguntas());
+	public void adiciona(Pergunta pergunta){
+		this.buscador.adiciona(pergunta);
+		result.redirectTo(PerguntasController.class).lista();
 	}
 }

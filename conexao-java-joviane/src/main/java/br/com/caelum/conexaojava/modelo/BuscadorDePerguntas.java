@@ -3,11 +3,14 @@ package br.com.caelum.conexaojava.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class BuscadorDePerguntas {
 	
 	private List<Pergunta> perguntas = new ArrayList<>();
 	
-	public BuscadorDePerguntas(){
+	public BuscadorDePerguntas() throws Exception {
 		String titulo = "Luan Santana no Conexão Java?";
 		String conteudo = "É impressão minha ou o Matheus parece com o Luan Santana? Além disso, o Mauricio parece com o Encantado do Shrek! Mais alguém acha isso?";
 		String autor = "Joviane";
@@ -31,6 +34,10 @@ public class BuscadorDePerguntas {
 
 	public List<Pergunta> getPerguntas() {
 		return this.perguntas;
+	}
+
+	public void adiciona(Pergunta pergunta) {
+		this.perguntas.add(pergunta);
 	}
 
 }
