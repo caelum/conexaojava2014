@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Pergunta {
 	private String titulo;
+	private int id;
 	private String conteudo;
 	private String autor;
 	private List<Resposta> respostas = new ArrayList<>();
@@ -58,5 +59,13 @@ public class Pergunta {
 
 	public void marcaRespostaComoCerta(Resposta resposta) {
 		this.correta = resposta;
+	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 }

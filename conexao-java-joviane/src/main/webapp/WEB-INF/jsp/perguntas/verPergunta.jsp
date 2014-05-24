@@ -4,6 +4,6 @@ ${pergunta.getTitulo()} <br>
 ${pergunta.getConteudo()} <br>
 ${pergunta.getAutor()} <br>
 <br>
-<c:forEach items="${pergunta.getRespostas()}" var="resposta">
+<c:forEach var="resposta" items="${pergunta.getRespostas()}">
 	${resposta} <br>
 </c:forEach>

@@ -24,8 +24,7 @@ public class BuscadorDePerguntas {
 		
 		Resposta resposta3 = new Resposta("Ele n‹o s— parece, ele Ž o pr—prio Luan Santana.");
 		pergunta1.respondeCom(resposta3);
-		
-		this.perguntas.add(pergunta1);
+		this.adiciona(pergunta1);
 	}
 	
 	public Pergunta buscaPorId(int id) {		
@@ -38,6 +37,7 @@ public class BuscadorDePerguntas {
 
 	public void adiciona(Pergunta pergunta) {
 		this.perguntas.add(pergunta);
+		pergunta.setId(perguntas.size());
 	}
 
 }
